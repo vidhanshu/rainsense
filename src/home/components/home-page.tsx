@@ -10,7 +10,6 @@ const HomePage = () => {
             <HeroSection />
             <FeaturesSection />
             <AboutSection />
-            <Footer/>
         </main>
     );
 };

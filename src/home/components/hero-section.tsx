@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
     return (
-        // <Container as="section">
-            <div className="space-y-6 py-20 px-40 bg-black text-white border">
+        <div className="py-20 px-40 bg-black text-white">
+            <Container as="section" className="space-y-6 ">
                 <h1 className="text-4xl font-bold">
                     Rainsense: Your Weather Oracle
                 </h1>
@@ -15,9 +15,11 @@ const HeroSection = () => {
                     learning to predict the weather in your area. Also provides
                     with a water resource management system.
                 </p>
-                <Button size="lg" variant='secondary'>Explore the Forecast</Button>
-            </div>
-        // </Container>
+                <Button size="lg" variant="secondary" className='font-bold'>
+                    Explore the Forecast
+                </Button>
+            </Container>
+        </div>
     );
 };
 

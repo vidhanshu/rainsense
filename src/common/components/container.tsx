@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import React from 'react';
 
 type TContainerProps = React.HTMLAttributes<HTMLDivElement> & {
@@ -7,7 +8,10 @@ const Container = ({ as, children, className, ...rest }: TContainerProps) => {
     const Component = as || 'div';
 
     return (
-        <Component className="max-w-7xl mx-auto py-4" {...rest}>
+        <Component
+            className={cn('max-w-7xl mx-auto py-4', className)}
+            {...rest}
+        >
             {children}
         </Component>
     );

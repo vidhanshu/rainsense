@@ -144,3 +144,13 @@ export const LATLONG_OF_CITIES = {
         long: 76.03,
     },
 };
+
+export const DAYS = [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday',
+];

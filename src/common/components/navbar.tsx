@@ -3,18 +3,16 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
+import useUnit from '@/src/common/custom-hook/useUnit';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 
 const Navbar = () => {
     const router = useRouter();
     const pathname = usePathname();
-    const searchParams = useSearchParams();
-    const unit = searchParams.get('unit');
-
-    const checked = unit === 'c' || !unit;
+    const { checked } = useUnit();
 
     return (
         <nav className="border-b">
