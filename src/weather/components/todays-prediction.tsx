@@ -4,25 +4,28 @@ import React from 'react';
 import { Wind, Umbrella, Droplets } from 'lucide-react';
 
 import Container from '@/src/common/components/container';
-import { LATLONG_OF_CITIES } from '@/src/weather/utils/constants';
 import useUnit from '@/src/common/custom-hook/useUnit';
-import { TCities, TTodaysPrecition } from './types';
 import useFetch from '@/src/common/custom-hook/useFetch';
+import { LATLONG_OF_CITIES } from '@/src/weather/utils/constants';
+import { TCities, TTodaysPrecition } from './types';
+import { constructApiUrl } from '@/src/common/utils/construct-api-url';
 
 type TTodaysPredictionProps = {
     citySelected: TCities;
 };
 const TodaysPrediction = ({ citySelected }: TTodaysPredictionProps) => {
-    const { unit } = useUnit();
+    const { unit, fullUnit } = useUnit();
 
     const { loading, data } = useFetch<TTodaysPrecition>({
-        url: `https://api.open-meteo.com/v1/forecast?latitude=${
-            LATLONG_OF_CITIES[citySelected].lat
-        }&longitude=${
-            LATLONG_OF_CITIES[citySelected].long
-        }&current=temperature_2m,wind_speed_10m,relative_humidity_2m,rain&temperature_unit=${
-            unit === 'c' ? 'celsius' : 'fahrenheit'
-        }`,
+        url: constructApiUrl(
+            {
+                current:
+                    'temperature_2m,wind_speed_10m,relative_humidity_2m,rain',
+                temperature_unit: fullUnit,
+            },
+            citySelected,
+            fullUnit
+        ),
         dependencies: [citySelected, unit],
     });
 

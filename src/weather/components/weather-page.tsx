@@ -7,17 +7,21 @@ import StateInteractiveMap from './state-interactive-map';
 import DayTabs from './day-tabs';
 import TodaysPrediction from './todays-prediction';
 import HourlyPrediction from './hourly-prediction';
-import { TCities } from './types';
+import { TCities, TDaySelected } from './types';
 
 const WeatherPage = () => {
     const [citySelected, setCitySelected] = useState<TCities>('Nagpur');
-    const [daySelected, setDaySelected] = useState<string>('Today');
+    const [daySelected, setDaySelected] = useState<TDaySelected>({
+        day: 'Today',
+        date: new Date().toISOString().split('T')[0],
+        idx: 0,
+    });
 
     const handleChangeSelected = (newCitySelected: TCities) => {
         setCitySelected(newCitySelected);
     };
 
-    const handleDaySelected = (newDaySelected: string) => {
+    const handleDaySelected = (newDaySelected: TDaySelected) => {
         setDaySelected(newDaySelected);
     };
 
@@ -29,10 +33,6 @@ const WeatherPage = () => {
                     <span className="underline">{citySelected}</span>
                 </h1>
             </Container>
-            <DayTabs
-                daySelected={daySelected}
-                handleDaySelected={handleDaySelected}
-            />
             <TodaysPrediction citySelected={citySelected} />
             <Container
                 as="section"
@@ -43,7 +43,14 @@ const WeatherPage = () => {
                     handleChangeSelected={handleChangeSelected}
                 />
             </Container>
-            <HourlyPrediction />
+            <DayTabs
+                daySelected={daySelected}
+                handleDaySelected={handleDaySelected}
+            />
+            <HourlyPrediction
+                citySelected={citySelected}
+                daySelected={daySelected}
+            />
         </main>
     );
 };

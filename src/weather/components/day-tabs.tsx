@@ -3,10 +3,11 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import Container from '@/src/common/components/container';
 import { DAYS } from '@/src/weather/utils/constants';
+import { TDaySelected } from './types';
 
 type TDayTabsProps = {
-    daySelected: string;
-    handleDaySelected: (day: string) => void;
+    daySelected: TDaySelected;
+    handleDaySelected: (day: TDaySelected) => void;
 };
 
 const DayTabs = ({ daySelected, handleDaySelected }: TDayTabsProps) => {
@@ -19,23 +20,39 @@ const DayTabs = ({ daySelected, handleDaySelected }: TDayTabsProps) => {
         <Container as="section">
             <ul className="shadow-md border rounded-lg p-4 flex items-center gap-4 flex-wrap">
                 <li
-                    onClick={() => handleDaySelected('Today')}
+                    onClick={() =>
+                        handleDaySelected({
+                            day: 'Today',
+                            date: new Date().toISOString().split('T')[0],
+                            idx: 0,
+                        })
+                    }
                     className={cn(
                         'px-4 py-2 border rounded-md text-center min-w-[150px] cursor-pointer',
-                        daySelected === 'Today'
+                        daySelected.day === 'Today'
                             ? 'bg-black text-white hover:bg-black/90'
                             : 'hover:bg-gray-50'
                     )}
                 >
                     <span>Today</span>
                 </li>
-                {next7Days.map((day) => (
+                {next7Days.map((day, i) => (
                     <li
-                        onClick={() => handleDaySelected(day)}
+                        onClick={() =>
+                            handleDaySelected({
+                                day,
+                                date: new Date(
+                                    new Date().getTime() + 86400000 * (i + 1)
+                                )
+                                    .toISOString()
+                                    .split('T')[0],
+                                idx: i,
+                            })
+                        }
                         key={day}
                         className={cn(
                             'px-4 py-2 border rounded-md text-center min-w-[110px] cursor-pointer',
-                            daySelected === day
+                            daySelected.day === day
                                 ? 'bg-black text-white hover:bg-black/90'
                                 : 'hover:bg-gray-50'
                         )}

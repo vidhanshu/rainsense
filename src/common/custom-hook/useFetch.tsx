@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 
 type TUseFetchProps = {
     url: string;
-    dependencies: any[];
+    dependencies?: any[];
 };
-function useFetch<T>({ url, dependencies }: TUseFetchProps) {
+function useFetch<T>({ url, dependencies = [] }: TUseFetchProps) {
     const [loading, setLoading] = useState<boolean>(true);
     const [data, setData] = useState<T | null>(null);
 
