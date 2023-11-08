@@ -1,18 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useParams } from 'next/navigation';
 
 import Container from '@/src/common/components/container';
 import StateInteractiveMap from './state-interactive-map';
-import { TCities } from './types';
 import DayTabs from './day-tabs';
 import TodaysPrediction from './todays-prediction';
 import HourlyPrediction from './hourly-prediction';
+import { TCities } from './types';
 
 const WeatherPage = () => {
-    const { city } = useParams() ?? {};
-    const [prediction, setPrediction] = useState({});
     const [citySelected, setCitySelected] = useState<TCities>('Nagpur');
     const [daySelected, setDaySelected] = useState<string>('Today');
 
