@@ -44,7 +44,6 @@ const WeatherPage = () => {
                     handleChangeSelected={handleChangeSelected}
                 />
             </Container>
-            <WaterResourceManagement citySelected={citySelected} />
             <DayTabs
                 daySelected={daySelected}
                 handleDaySelected={handleDaySelected}
@@ -53,6 +52,7 @@ const WeatherPage = () => {
                 citySelected={citySelected}
                 daySelected={daySelected}
             />
+            <WaterResourceManagement citySelected={citySelected} />
         </main>
     );
 };

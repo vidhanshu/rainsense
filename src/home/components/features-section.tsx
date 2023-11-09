@@ -22,7 +22,7 @@ function FeaturesSection() {
             icon: IcDrought
         },
         {
-            title: 'Reservoir Management',
+            title: 'Reservoir Water Level Indicator',
             description: "Manages water distribution efficiently.",
             icon: IcWater
         }

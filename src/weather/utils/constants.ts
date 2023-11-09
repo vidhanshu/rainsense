@@ -473,11 +473,11 @@ export const RESERVOIR_DATA = {
         water_amount_liters: 527890123,
     },
     Satara: {
-        reservoir_level_percentage: 70,
+        reservoir_level_percentage: 40,
         water_amount_liters: 512345678,
     },
     Sangli: {
-        reservoir_level_percentage: 67,
+        reservoir_level_percentage: 37,
         water_amount_liters: 475678901,
     },
     Kolhapur: {
@@ -517,3 +517,5 @@ export const RESERVOIR_DATA = {
         water_amount_liters: 556789012,
     },
 };
+
+

@@ -16,6 +16,8 @@ import useFetch from '@/src/common/custom-hook/useFetch';
 import { constructApiUrl } from '@/src/common/utils/construct-api-url';
 import { TCities, TDaySelected, THourlyPrediction } from './types';
 import RainTemperatureGraph from './rain-temperature-graph';
+import { IcRain, IcSun, IcSunOrange } from '@/src/assets';
+import Image from 'next/image';
 
 type THourlyPredictionProps = {
     citySelected: TCities;
@@ -95,11 +97,18 @@ const HourlyPrediction = ({
                 </TableHeader>
                 <TableBody>
                     <TableRow>
-                        <TableCell>Rain(mm)</TableCell>
+                        <TableCell>Rain</TableCell>
                         {updatedData.hourly.data
                             .slice(strip[0], strip[1])
                             .map((d, idx) => (
-                                <TableCell key={idx}>{d.rain}</TableCell>
+                                <TableCell key={idx}>
+                                    {d.rain === 0 ?
+                                        <Image width={28} height={28} src={IcSunOrange} alt="" />
+                                        :
+                                        <Image width={28} height={28} src={IcRain} alt="" />
+                                    }
+
+                                </TableCell>
                             ))}
                     </TableRow>
                     <TableRow>
