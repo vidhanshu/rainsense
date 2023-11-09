@@ -18,6 +18,9 @@ const DayTabs = ({ daySelected, handleDaySelected }: TDayTabsProps) => {
 
     return (
         <Container as="section">
+            <Container>
+                <p className="font-bold text-2xl md:text-2xl mt-10 ">Weekly Forecast</p>
+            </Container>
             <ul className="shadow-md border rounded-lg p-4 flex items-center gap-4 flex-wrap">
                 <li
                     onClick={() =>

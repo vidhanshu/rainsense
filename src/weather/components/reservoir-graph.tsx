@@ -15,8 +15,8 @@ function ReservoirGraph() {
 
     return (
         <div className="py-8">
-            <h1 className="text-xl font-bold mb-4">
-                Line graph
+            <h1 className="text-xl font-bold mb-4 mt-20">
+                Line graph for water level in the reservoir of the cities :
             </h1>
             <Line
                 data={{

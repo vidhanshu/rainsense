@@ -9,6 +9,7 @@ import TodaysPrediction from './todays-prediction';
 import HourlyPrediction from './hourly-prediction';
 import { TCities, TDaySelected } from './types';
 import WaterResourceManagement from './water-resource-management';
+import DroughtPreciction from './drought-condition';
 
 const WeatherPage = () => {
     const [citySelected, setCitySelected] = useState<TCities>('Nagpur');
@@ -28,22 +29,23 @@ const WeatherPage = () => {
 
     return (
         <main className="py-8">
-            <Container>
-                <h1 className="text-2xl font-bold text-center">
-                    Showing rainfall prediction for{' '}
-                    <span className="underline">{citySelected}</span>
-                </h1>
-            </Container>
-            <TodaysPrediction citySelected={citySelected} />
+
             <Container
                 as="section"
                 className="flex flex-col items-center justify-center"
             >
+                <Container>
+                    <p className="font-bold text-2xl md:text-2xl mt-10 ">Interactive Map</p>
+                </Container>
                 <StateInteractiveMap
                     selected={citySelected}
                     handleChangeSelected={handleChangeSelected}
                 />
             </Container>
+            <Container>
+                <p className="font-bold text-2xl md:text-4xl mt-10 ">{`Rainfall Prediction for`} {citySelected}</p>
+            </Container>
+            <TodaysPrediction citySelected={citySelected} />
             <DayTabs
                 daySelected={daySelected}
                 handleDaySelected={handleDaySelected}
@@ -53,6 +55,7 @@ const WeatherPage = () => {
                 daySelected={daySelected}
             />
             <WaterResourceManagement citySelected={citySelected} />
+            <DroughtPreciction city={citySelected} />
         </main>
     );
 };

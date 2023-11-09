@@ -19,6 +19,7 @@ import RainTemperatureGraph from './rain-temperature-graph';
 import { IcRain, IcSun, IcSunOrange } from '@/src/assets';
 import Image from 'next/image';
 
+
 type THourlyPredictionProps = {
     citySelected: TCities;
     daySelected: TDaySelected;
