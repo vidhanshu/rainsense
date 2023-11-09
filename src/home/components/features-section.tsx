@@ -1,7 +1,8 @@
-import { IcDrought, IcPrecipitation, IcSun, IcWater } from '@/src/assets';
 import React from 'react'
 import Image from 'next/image'
+
 import Container from '@/src/common/components/container';
+import { IcDrought, IcPrecipitation, IcSun, IcWater } from '@/src/assets';
 
 function FeaturesSection() {
     const services = [
