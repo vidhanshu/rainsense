@@ -37,7 +37,8 @@ const TodaysPrediction = ({ citySelected }: TTodaysPredictionProps) => {
 
     return (
         <Container>
-            <div className="bg-[url(/todays-weather-bg.png)] p-6 bg-no-repeat bg-cover rounded-lg">
+            {/* [url(/todays-weather-bg.png)] */}
+            <div className="bg-black p-6 bg-no-repeat bg-cover rounded-lg">
                 <div className="flex items-center justify-between">
                     <h1 className="text-white font-semibold text-3xl">
                         The weather <br />

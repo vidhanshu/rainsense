@@ -1,4 +1,4 @@
-import { Line } from 'react-chartjs-2';
+// import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, registerables } from 'chart.js';
 
 import { THourlyPrediction } from './types';
@@ -19,7 +19,7 @@ const RainTemperatureGraph = ({ data }: TRainTemperatureGraphProps) => {
             <h1 className="text-xl font-bold mb-4">
                 Line graph
             </h1>
-            <Line
+            {/* <Line
                 data={{
                     datasets: [
                         {
@@ -66,7 +66,7 @@ const RainTemperatureGraph = ({ data }: TRainTemperatureGraphProps) => {
                         '23:00',
                     ],
                 }}
-            />
+            /> */}
         </div>
     );
 };
