@@ -370,3 +370,150 @@ export const DUMMY_PREDICTION = {
         ],
     },
 };
+
+export const RESERVOIR_DATA = {
+    Akola: {
+        reservoir_level_percentage: 75,
+        water_amount_liters: 532467890,
+    },
+    Washim: {
+        reservoir_level_percentage: 54,
+        water_amount_liters: 476589012,
+    },
+    Nandurbar: {
+        reservoir_level_percentage: 88,
+        water_amount_liters: 593456789,
+    },
+    Dhule: {
+        reservoir_level_percentage: 62,
+        water_amount_liters: 485678901,
+    },
+    Jalgaon: {
+        reservoir_level_percentage: 92,
+        water_amount_liters: 612345678,
+    },
+    Buldhana: {
+        reservoir_level_percentage: 85,
+        water_amount_liters: 578901234,
+    },
+    Amravati: {
+        reservoir_level_percentage: 68,
+        water_amount_liters: 443567890,
+    },
+    Wardha: {
+        reservoir_level_percentage: 79,
+        water_amount_liters: 518901234,
+    },
+    Gondia: {
+        reservoir_level_percentage: 71,
+        water_amount_liters: 496578901,
+    },
+    Bhandara: {
+        reservoir_level_percentage: 87,
+        water_amount_liters: 556789012,
+    },
+    Nagpur: {
+        reservoir_level_percentage: 63,
+        water_amount_liters: 487901234,
+    },
+    Chandrapur: {
+        reservoir_level_percentage: 85,
+        water_amount_liters: 578901234,
+    },
+    Gadchiroli: {
+        reservoir_level_percentage: 66,
+        water_amount_liters: 412356789,
+    },
+    Yavatmal: {
+        reservoir_level_percentage: 73,
+        water_amount_liters: 527890123,
+    },
+    Nanded: {
+        reservoir_level_percentage: 81,
+        water_amount_liters: 545678901,
+    },
+    Hingoli: {
+        reservoir_level_percentage: 76,
+        water_amount_liters: 475678901,
+    },
+    Parbhani: {
+        reservoir_level_percentage: 70,
+        water_amount_liters: 518901234,
+    },
+    Jalna: {
+        reservoir_level_percentage: 65,
+        water_amount_liters: 434567890,
+    },
+    Aurangabad: {
+        reservoir_level_percentage: 83,
+        water_amount_liters: 578901234,
+    },
+    Nashik: {
+        reservoir_level_percentage: 74,
+        water_amount_liters: 527890123,
+    },
+    Thane: {
+        reservoir_level_percentage: 60,
+        water_amount_liters: 487901234,
+    },
+    Mumbai: {
+        reservoir_level_percentage: 95,
+        water_amount_liters: 645678901,
+    },
+    Raigad: {
+        reservoir_level_percentage: 75,
+        water_amount_liters: 518901234,
+    },
+    Ratnagiri: {
+        reservoir_level_percentage: 79,
+        water_amount_liters: 565678901,
+    },
+    Sindhudurg: {
+        reservoir_level_percentage: 72,
+        water_amount_liters: 527890123,
+    },
+    Satara: {
+        reservoir_level_percentage: 70,
+        water_amount_liters: 512345678,
+    },
+    Sangli: {
+        reservoir_level_percentage: 67,
+        water_amount_liters: 475678901,
+    },
+    Kolhapur: {
+        reservoir_level_percentage: 86,
+        water_amount_liters: 518901234,
+    },
+    Solapur: {
+        reservoir_level_percentage: 77,
+        water_amount_liters: 545678901,
+    },
+    Latur: {
+        reservoir_level_percentage: 80,
+        water_amount_liters: 475678901,
+    },
+    Osmanabad: {
+        reservoir_level_percentage: 78,
+        water_amount_liters: 518901234,
+    },
+    Beed: {
+        reservoir_level_percentage: 63,
+        water_amount_liters: 412356789,
+    },
+    Ahmednagar: {
+        reservoir_level_percentage: 72,
+        water_amount_liters: 512345678,
+    },
+    Pune: {
+        reservoir_level_percentage: 87,
+        water_amount_liters: 578901234,
+    },
+    Palghar: {
+        reservoir_level_percentage: 69,
+        water_amount_liters: 487901234,
+    },
+    Usmanabad: {
+        reservoir_level_percentage: 80,
+        water_amount_liters: 556789012,
+    },
+};

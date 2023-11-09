@@ -8,6 +8,7 @@ import DayTabs from './day-tabs';
 import TodaysPrediction from './todays-prediction';
 import HourlyPrediction from './hourly-prediction';
 import { TCities, TDaySelected } from './types';
+import WaterResourceManagement from './water-resource-management';
 
 const WeatherPage = () => {
     const [citySelected, setCitySelected] = useState<TCities>('Nagpur');
@@ -43,6 +44,7 @@ const WeatherPage = () => {
                     handleChangeSelected={handleChangeSelected}
                 />
             </Container>
+            <WaterResourceManagement citySelected={citySelected} />
             <DayTabs
                 daySelected={daySelected}
                 handleDaySelected={handleDaySelected}

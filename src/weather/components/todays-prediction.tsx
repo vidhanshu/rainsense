@@ -6,9 +6,8 @@ import { Wind, Umbrella, Droplets } from 'lucide-react';
 import Container from '@/src/common/components/container';
 import useUnit from '@/src/common/custom-hook/useUnit';
 import useFetch from '@/src/common/custom-hook/useFetch';
-import { LATLONG_OF_CITIES } from '@/src/weather/utils/constants';
-import { TCities, TTodaysPrecition } from './types';
 import { constructApiUrl } from '@/src/common/utils/construct-api-url';
+import { TCities, TTodaysPrecition } from './types';
 
 type TTodaysPredictionProps = {
     citySelected: TCities;
