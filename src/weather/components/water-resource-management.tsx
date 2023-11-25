@@ -32,7 +32,6 @@ const WaterResourceManagement = ({
                             million lit.
                         </h1>
                     </div>
-                    div
                     <div className="space-y-4 w-[150px]">
                         <CircularProgressbar
                             strokeWidth={4}

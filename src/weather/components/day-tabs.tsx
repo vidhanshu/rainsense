@@ -12,7 +12,7 @@ type TDayTabsProps = {
 
 const DayTabs = ({ daySelected, handleDaySelected }: TDayTabsProps) => {
     let next7Days = [];
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 6; i++) {
         next7Days.push(DAYS[(new Date().getDay() + i) % 7]);
     }
 
@@ -49,7 +49,7 @@ const DayTabs = ({ daySelected, handleDaySelected }: TDayTabsProps) => {
                                 )
                                     .toISOString()
                                     .split('T')[0],
-                                idx: i,
+                                idx: i + 1,
                             })
                         }
                         key={day}

@@ -8,6 +8,7 @@ import useUnit from '@/src/common/custom-hook/useUnit';
 import useFetch from '@/src/common/custom-hook/useFetch';
 import { constructApiUrl } from '@/src/common/utils/construct-api-url';
 import { TCities, TTodaysPrecition } from './types';
+import { MODEL_BASE_URL } from '../utils/constants';
 
 type TTodaysPredictionProps = {
     citySelected: TCities;
@@ -19,7 +20,7 @@ const TodaysPrediction = ({ citySelected }: TTodaysPredictionProps) => {
         url: constructApiUrl(
             {
                 current:
-                    "temperature_2m,relative_humidity_2m,precipitation,rain,pressure_msl,surface_pressure,wind_speed_10m,wind_direction_10m,wind_gusts_10m",
+                    'temperature_2m,relative_humidity_2m,precipitation,rain,pressure_msl,surface_pressure,wind_speed_10m,wind_direction_10m,wind_gusts_10m',
                 temperature_unit: fullUnit,
             },
             citySelected,
@@ -27,21 +28,23 @@ const TodaysPrediction = ({ citySelected }: TTodaysPredictionProps) => {
         ),
         dependencies: [citySelected, unit],
     });
-    const { loading: isLoading, data: payload } = useFetch<{ rain: string, tip: string }>({
-        url: "https://rainsense-lstm-api.onrender.com/predict",
-        payload:
-        {
-            date: "2012-01-23",
-            location: "15",
+    const { loading: isLoading, data: payload } = useFetch<{
+        rain: string;
+        tip: string;
+    }>({
+        url: `${MODEL_BASE_URL}/predict`,
+        payload: {
+            date: '2012-01-23',
+            location: '15',
             mintemp: 13.4,
             maxtemp: 22.9,
             rainfall: 0.6,
-            evaporation: "2.3",
-            sunshine: "0",
-            windgustdir: "11",
+            evaporation: '2.3',
+            sunshine: '0',
+            windgustdir: '11',
             windgustspeed: 44,
-            winddir9am: "11",
-            winddir3pm: "2",
+            winddir9am: '11',
+            winddir3pm: '2',
             windspeed9am: 20,
             windspeed3pm: 24,
             humidity9am: 71,
@@ -49,10 +52,10 @@ const TodaysPrediction = ({ citySelected }: TTodaysPredictionProps) => {
             pressure9am: 1007.7,
             pressure3pm: 1007.1,
             cloud9am: 8,
-            cloud3pm: "3",
+            cloud3pm: '3',
             temp9am: 16.9,
             temp3pm: 21.8,
-            raintoday: "4"
+            raintoday: '4',
         },
         dependencies: [citySelected, unit],
     });
@@ -85,7 +88,7 @@ const TodaysPrediction = ({ citySelected }: TTodaysPredictionProps) => {
                         </div>
                         <div className="flex gap-x-4 text-white text-2xl items-center font-semibold">
                             <Umbrella className="w-6 h-6" />{' '}
-                            {payload?.rain === "0" ? "Yes" : "No"}
+                            {payload?.rain === '0' ? 'Yes' : 'No'}
                         </div>
                         <div className="flex gap-x-4 text-white text-2xl items-center font-semibold">
                             <Droplets className="w-6 h-6" />{' '}

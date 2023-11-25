@@ -1,3 +1,5 @@
+export const MODEL_BASE_URL = 'https://rainsense-lstm-api.onrender.com';
+
 export const LATLONG_OF_CITIES = {
     Akola: {
         lat: 20.7,
@@ -517,5 +519,3 @@ export const RESERVOIR_DATA = {
         water_amount_liters: 556789012,
     },
 };
-
-

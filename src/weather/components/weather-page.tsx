@@ -43,7 +43,7 @@ const WeatherPage = () => {
                 />
             </Container>
             <Container>
-                <p className="font-bold text-2xl md:text-4xl mt-10 ">{`Rainfall Prediction for`} {citySelected}</p>
+                <p className="font-bold text-2xl md:text-4xl mt-10 ">Showing Rainfall Prediction for {citySelected}</p>
             </Container>
             <TodaysPrediction citySelected={citySelected} />
             <DayTabs

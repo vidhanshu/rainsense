@@ -11,9 +11,11 @@ const HomePage = () => {
         <main>
             <HeroSection />
             <FeaturesSection />
-            <Container as="section">
-                <h1 className='font-bold text-lg mb-4'>Accuracy we achived</h1>
-                <div className='flex gap-x-4 justify-between'>
+            <Container as="section" className='py-16'>
+                <h1 className="font-bold text-6xl mb-16 text-center">
+                    Accuracy we achived
+                </h1>
+                <div className="flex gap-x-4 justify-between">
                     <Image
                         src="/accuracy.png"
                         width={600}

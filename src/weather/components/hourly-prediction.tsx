@@ -77,7 +77,7 @@ const HourlyPrediction = ({
     }
 
     const strip = [24 * daySelected.idx, 24 * (daySelected.idx + 1)];
-
+    console.log(updatedData)
     return (
         <Container>
             <h1 className="text-xl font-bold mb-4">
