@@ -18,7 +18,8 @@ import { TCities, TDaySelected, THourlyPrediction } from './types';
 import RainTemperatureGraph from './rain-temperature-graph';
 import { IcRain, IcSun, IcSunOrange } from '@/src/assets';
 import Image from 'next/image';
-
+import { Cloud, CloudRain, Sun } from 'lucide-react';
+import InfoTooltip from '@/src/common/components/InfoTooltip';
 
 type THourlyPredictionProps = {
     citySelected: TCities;
@@ -77,7 +78,7 @@ const HourlyPrediction = ({
     }
 
     const strip = [24 * daySelected.idx, 24 * (daySelected.idx + 1)];
-    console.log(updatedData)
+    console.log(updatedData);
     return (
         <Container>
             <h1 className="text-xl font-bold mb-4">
@@ -103,12 +104,23 @@ const HourlyPrediction = ({
                             .slice(strip[0], strip[1])
                             .map((d, idx) => (
                                 <TableCell key={idx}>
-                                    {d.rain === 0 ?
-                                        <Image width={28} height={28} src={IcSunOrange} alt="" />
-                                        :
-                                        <Image width={28} height={28} src={IcRain} alt="" />
-                                    }
-
+                                    {d.rain === 0 ? (
+                                        <InfoTooltip
+                                            trigger={
+                                                <Sun className="w-5 h-5 text-yellow-600" />
+                                            }
+                                        >
+                                            There will be no rain
+                                        </InfoTooltip>
+                                    ) : (
+                                        <InfoTooltip
+                                            trigger={
+                                                <CloudRain className="w-5 h-5 text-blue-600" />
+                                            }
+                                        >
+                                            There will be rain
+                                        </InfoTooltip>
+                                    )}
                                 </TableCell>
                             ))}
                     </TableRow>
